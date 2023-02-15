@@ -13,28 +13,36 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-dark navbar-expand-lg bg-danger-subtle p-4">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-danger-subtle p-4">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#"><img src="./Assets/img/Logo-Amazing-Events.png" alt="Logo-Amazing-Events"
-                        width="200px"></a>
+                <a class="navbar-brand" href="#"><img src="./Assets/img/Logo-Amazing-Events.png"
+                        alt="Logo-Amazing-Events" width="200px"></a>
+                <button class="navbar-toggler navbar-toggler-icon color-text" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class=""></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                    <ul class="navbar-nav nav  mb-2 mb-lg-0  gap-lg-4 gap-md-3 gap-sm-1 fs-3">
+                        <li class="btn btn-dark nav-item">
+                            <a class="nav-link color-text"  href="./index.html">Home</a>
+                        </li>
+                        <li class="btn btn-dark nav-item">
+                            <a class="nav-link color-text" href="./uncoming-events.html">Uncoming Events</a>
+                        </li>
+                        <li class="btn btn-dark nav-item">
+                            <a class="nav-link color-text" href="./past-events.html">Past Events</a>
+                        </li>
+                        <li class="btn btn-dark nav-item">
+                            <a class="nav-link color-text" href="./contact.html">Contact</a>
+                        </li>
+                        <li class="btn btn-dark nav-item">
+                            <a class="nav-link color-text active" aria-current="page"href="#">Stats</a>
+                        </li>
 
-                <ul class="nav justify-content-end gap-5 fs-3">
-                    <li class="btn btn-dark nav-item">
-                        <a class="nav-link color-text " href="./index.html">Home</a>
-                    </li>
-                    <li class="btn btn-dark nav-item">
-                        <a class="nav-link color-text" href="./uncoming-events.html">Uncoming Events</a>
-                    </li>
-                    <li class="btn btn-dark nav-item">
-                        <a class="nav-link color-text" href="./past-events.html">Past Events</a>
-                    </li>
-                    <li class="btn btn-dark nav-item">
-                        <a class="nav-link color-text" href="./contact.html">Contact</a>
-                    </li>
-                    <li class="btn btn-dark nav-item">
-                        <a class="nav-link color-text active" aria-current="page" href="#">Stats</a>
-                    </li>
-                </ul>
+                    </ul>
+                    
+                </div>
             </div>
         </nav>
         <div id="carouselExampleDark" class="bg-danger-subtle carousel carousel-dark slide">
@@ -70,9 +78,89 @@
           </div>
     </header>
 
-    <main>
+    <main class="d-flex align-items-center p-5 stats-main">
 
-        
+        <table class="table caption-top table-bordered">
+            <caption class="border border-5 border-dark-subtle bg-danger-subtle ps-2">Events Statistics</caption>
+            <thead>
+              <tr>
+                <th scope="col">Events with the highest percentage of attendance</th>
+                <th scope="col">Events with the lowest percentage of attendance</th>
+                <th scope="col">Event with larger capacity</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+          <table class="table caption-top table-bordered">
+            <caption class="border border-5 border-dark-subtle bg-danger-subtle ps-2">Upcoming Events Statistics by Category</caption>
+            <thead>
+              <tr>
+                <th scope="col">Category</th>
+                <th scope="col">Revenues</th>
+                <th scope="col">Percentage of attendance</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+          <table class="table caption-top table-bordered">
+            <caption class="border border-5 border-dark-subtle bg-danger-subtle ps-2">Past Events Statistics by Category</caption>
+            <thead>
+              <tr>
+                <th scope="col">Category</th>
+                <th scope="col">Revenues</th>
+                <th scope="col">Percentage of attendance</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
     </main>
 
     <footer>

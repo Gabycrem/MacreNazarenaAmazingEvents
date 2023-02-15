@@ -15,28 +15,36 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-dark navbar-expand-lg bg-danger-subtle p-4">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-danger-subtle p-4">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#"><img src="./Assets/img/Logo-Amazing-Events.png" alt="Logo-Amazing-Events"
-                        width="200px"></a>
+                <a class="navbar-brand" href="#"><img src="./Assets/img/Logo-Amazing-Events.png"
+                        alt="Logo-Amazing-Events" width="200px"></a>
+                <button class="navbar-toggler navbar-toggler-icon color-text" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class=""></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                    <ul class="navbar-nav nav  mb-2 mb-lg-0  gap-lg-4 gap-md-3 gap-sm-1 fs-3">
+                        <li class="btn btn-dark nav-item">
+                            <a class="nav-link color-text" href="./index.html">Home</a>
+                        </li>
+                        <li class="btn btn-dark nav-item">
+                            <a class="nav-link color-text" href="./uncoming-events.html">Uncoming Events</a>
+                        </li>
+                        <li class="btn btn-dark nav-item">
+                            <a class="nav-link color-text active" aria-current="page"  href="#">Past Events</a>
+                        </li>
+                        <li class="btn btn-dark nav-item">
+                            <a class="nav-link color-text" href="./contact.html">Contact</a>
+                        </li>
+                        <li class="btn btn-dark nav-item">
+                            <a class="nav-link color-text" href="./stats.html">Stats</a>
+                        </li>
 
-                <ul class="nav justify-content-end gap-5 fs-3 text-light-emphasis">
-                    <li class="btn btn-dark nav-item">
-                        <a class="nav-link color-text " href="./index.html">Home</a>
-                    </li>
-                    <li class="btn btn-dark nav-item">
-                        <a class="nav-link color-text" href="./uncoming-events.html">Uncoming Events</a>
-                    </li>
-                    <li class="btn btn-dark nav-item">
-                        <a class="nav-link color-text active" aria-current="page" href="#">Past Events</a>
-                    </li>
-                    <li class="btn btn-dark nav-item">
-                        <a class="nav-link color-text" href="./contact.html">Contact</a>
-                    </li>
-                    <li class="btn btn-dark nav-item">
-                        <a class="nav-link color-text" href="./stats.html">Stats</a>
-                    </li>
-                </ul>
+                    </ul>
+                    
+                </div>
             </div>
         </nav>
         <div id="carouselExampleDark" class="bg-danger-subtle carousel carousel-dark slide">
@@ -74,9 +82,9 @@
         </div>
     </header>
 
-    <main class="m-5">
-        <div class="d-flex justify-content-evenly mt-5 m-5">
-            <div class="form-check">
+    <main>
+        <div class="main-check d-flex justify-content-lg-between justify-content-sm-center mt-5 w-100 flex-wrap">
+            <div class=" form-check">
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
                         value="option1">
@@ -110,7 +118,7 @@
                     </span></button>
             </form>
         </div>
-        <div class="d-flex flex-wrap gap-3 justify-content-evenly m-5">
+        <div class="cards d-flex flex-wrap gap-3 justify-content-evenly m-5">
             <div class="card">
                 <img src="./Assets/img/Cinema.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
@@ -147,7 +155,7 @@
                 </div>
             </div>
 
-            <div class="card" >
+            <div class="card">
                 <img src="./Assets/img/Cinema.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
@@ -170,7 +178,7 @@
                     <a href="./details.html" class="btn btn-dark color-text card-link">Another link</a>
                 </div>
             </div>
-            <div class="card" >
+            <div class="card">
                 <img src="./Assets/img/Cinema.jpg" class="card-img-top" alt="...">
                 <div class="card-body text-center">
                     <h5 class="card-title ">Card title</h5>

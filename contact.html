@@ -13,30 +13,38 @@
 
 <body>
   <header>
-    <nav class="navbar navbar-dark navbar-expand-lg bg-danger-subtle p-4">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-danger-subtle p-4">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#"><img src="./Assets/img/Logo-Amazing-Events.png" alt="Logo-Amazing-Events"
-            width="200px"></a>
+          <a class="navbar-brand" href="#"><img src="./Assets/img/Logo-Amazing-Events.png"
+                  alt="Logo-Amazing-Events" width="200px"></a>
+          <button class="navbar-toggler navbar-toggler-icon color-text" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+              aria-expanded="false" aria-label="Toggle navigation">
+              <span class=""></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+              <ul class="navbar-nav nav  mb-2 mb-lg-0  gap-lg-4 gap-md-3 gap-sm-1 fs-3">
+                  <li class="btn btn-dark nav-item">
+                      <a class="nav-link color-text" href="./index.html">Home</a>
+                  </li>
+                  <li class="btn btn-dark nav-item">
+                      <a class="nav-link color-text" href="./uncoming-events.html">Uncoming Events</a>
+                  </li>
+                  <li class="btn btn-dark nav-item">
+                      <a class="nav-link color-text" href="./past-events.html">Past Events</a>
+                  </li>
+                  <li class="btn btn-dark nav-item">
+                      <a class="nav-link color-text active" aria-current="page" href="#">Contact</a>
+                  </li>
+                  <li class="btn btn-dark nav-item">
+                      <a class="nav-link color-text" href="./stats.html">Stats</a>
+                  </li>
 
-        <ul class="nav justify-content-end gap-5 fs-3">
-          <li class="btn btn-dark nav-item">
-            <a class="nav-link color-text" href="./index.html">Home</a>
-          </li>
-          <li class="btn btn-dark nav-item">
-            <a class="nav-link color-text" href="./uncoming-events.html">Uncoming Events</a>
-          </li>
-          <li class="btn btn-dark nav-item">
-            <a class="nav-link color-text" href="./past-events.html">Past Events</a>
-          </li>
-          <li class="btn btn-dark nav-item">
-            <a class="nav-link color-text active" aria-current="page" href="#">Contact</a>
-          </li>
-          <li class="btn btn-dark nav-item">
-            <a class="nav-link color-text" href="./stats.html">Stats</a>
-          </li>
-        </ul>
+              </ul>
+              
+          </div>
       </div>
-    </nav>
+  </nav>
     <div id="carouselExampleDark" class="bg-danger-subtle carousel carousel-dark slide">
       <div class="carousel-inner">
         <div class="carousel-item  p-4">
@@ -70,21 +78,21 @@
     </div>
   </header>
 
-  <main class="d-flex justify-content-center w-100">
-    <form action="#" class="d-flex flex-column form-control-lg  m-5" method="get">
-      <div class="mb-3">
+  <main class="d-flex justify-content-center contact-main">
+    <form action="#" class="d-flex flex-column form-control-lg m-5 " method="get">
+      <div class="mb-3 ">
         <label for="text-name" class="d-block form-label">Name:</label>
-        <input type="text" class="form-control-lg" id="text-name">
+        <input type="text" class="form-control-lg w-100" id="text-name" required>
       </div>
       <div class="  mb-3">
         <label for="exampleFormControlInput1" class="d-block form-label">Email:</label>
-        <input type="email" class="form-control-lg" id="exampleFormControlInput1" placeholder="name@example.com">
+        <input type="email" class="form-control-lg w-100" id="exampleFormControlInput1" placeholder="name@example.com" required>
       </div>
       <div class="mb-3">
         <label for="exampleFormControlTextarea1" class="d-block form-label">Message</label>
-        <textarea class="form-control-lg" id="exampleFormControlTextarea1" cols="23" rows="5"></textarea>
+        <textarea class="form-control-lg w-100" id="exampleFormControlTextarea1" cols="23" rows="5" required></textarea>
       </div>
-      <input class="btn btn-dark color-text card-link" type="submit" value="Submit">
+      <input class="btn btn-dark color-text card-link w-50 m-auto" type="submit" value="Submit">
     </form>
   </main>
 

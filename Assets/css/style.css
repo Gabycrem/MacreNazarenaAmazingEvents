@@ -23,7 +23,11 @@ footer{
     min-height: 10vh;
 }
 
-
+.navbar .navbar-toggler-icon{
+    background-image: url(../img/burguer.png);
+    width: 2.5em;
+    height: 2.5em;
+}
 .color-text{
     color: #d90368!important;
 }
@@ -65,16 +69,53 @@ footer{
     margin-bottom: 1.5em;
 }
 
+.stats-main{
+    width: 80%;
+    margin:auto;
+}
+
+.stats-main td{
+    height: 2rem;
+}
+
+.contact-main form{
+    width: 450px;
+}
 /* .form-control-lg{
     align-items: center;
 } */
+.main-check{
+    padding-left: 5%;
+    padding-right: 5%;
+}
 
-@media only screen and (min-width: 1230px){
-    main{
-        width: 60%;
+
+@media only screen and (min-width: 1440px){
+    .cards{
+        width: 80%;
         margin: auto;
     }
+    .stats-main{
+        width: 60%;
+        margin:auto;
+    }
+    
 }
+
+@media only screen and (min-width: 1637px){
+    .cards{
+        width: 70%;
+    }
+}
+
+@media only screen and (min-width: 1868px){
+    .cards{
+        width: 60%;
+    }
+
+    
+}
+
 
 
 @media only screen and (max-width: 798px){
@@ -83,4 +124,8 @@ footer{
     .cards{
         margin: 0;
     }
+}
+
+@media only screen and (max-width: 649px){
+
 }

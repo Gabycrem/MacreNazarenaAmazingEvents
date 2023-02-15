@@ -15,30 +15,38 @@
 
 <body>
   <header>
-    <nav class="navbar navbar-dark navbar-expand-lg bg-danger-subtle p-4">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-danger-subtle p-4">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#"><img src="./Assets/img/Logo-Amazing-Events.png" alt="Logo-Amazing-Events"
-            width="200px"></a>
+          <a class="navbar-brand" href="#"><img src="./Assets/img/Logo-Amazing-Events.png"
+                  alt="Logo-Amazing-Events" width="200px"></a>
+          <button class="navbar-toggler navbar-toggler-icon color-text" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+              aria-expanded="false" aria-label="Toggle navigation">
+              <span class=""></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+              <ul class="navbar-nav nav  mb-2 mb-lg-0  gap-lg-4 gap-md-3 gap-sm-1 fs-3">
+                  <li class="btn btn-dark nav-item">
+                      <a class="nav-link color-text" href="./index.html">Home</a>
+                  </li>
+                  <li class="btn btn-dark nav-item">
+                      <a class="nav-link color-text active" aria-current="page" href="#">Uncoming Events</a>
+                  </li>
+                  <li class="btn btn-dark nav-item">
+                      <a class="nav-link color-text" href="./past-events.html">Past Events</a>
+                  </li>
+                  <li class="btn btn-dark nav-item">
+                      <a class="nav-link color-text" href="./contact.html">Contact</a>
+                  </li>
+                  <li class="btn btn-dark nav-item">
+                      <a class="nav-link color-text" href="./stats.html">Stats</a>
+                  </li>
 
-        <ul class="nav justify-content-end gap-5 fs-3">
-          <li class="btn btn-dark nav-item">
-            <a class="nav-link color-text" href="./index.html">Home</a>
-          </li>
-          <li class="btn btn-dark nav-item">
-            <a class="nav-link color-text active" aria-current="page" href="#">Uncoming Events</a>
-          </li>
-          <li class="btn btn-dark nav-item">
-            <a class="nav-link color-text" href="./past-events.html">Past Events</a>
-          </li>
-          <li class="btn btn-dark nav-item">
-            <a class="nav-link color-text" href="./contact.html">Contact</a>
-          </li>
-          <li class="btn btn-dark nav-item">
-            <a class="nav-link color-text" href="./stats.html">Stats</a>
-          </li>
-        </ul>
+              </ul>
+              
+          </div>
       </div>
-    </nav>
+  </nav>
     <div id="carouselExampleDark" class="bg-danger-subtle carousel carousel-dark slide">
       <div class="carousel-inner">
         <div class="carousel-item  p-4">
@@ -72,115 +80,115 @@
     </div>
   </header>
 
-  <main class="m-5">
-        <div class="d-flex justify-content-evenly mt-5 m-5">
-            <div class="form-check">
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                        value="option1">
-                    <label class="form-check-label" for="inlineRadio1">Category</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-                        value="option2">
-                    <label class="form-check-label" for="inlineRadio2">Category</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
-                        value="option3">
-                    <label class="form-check-label" for="inlineRadio3">Category </label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4"
-                        value="option4">
-                    <label class="form-check-label" for="inlineRadio4">Category</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5"
-                        value="option5">
-                    <label class="form-check-label" for="inlineRadio5">Category </label>
-                </div>
+  <main>
+    <div class="main-check d-flex justify-content-lg-between justify-content-sm-center mt-5 w-100 flex-wrap">
+        <div class=" form-check">
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                    value="option1">
+                <label class="form-check-label" for="inlineRadio1">Category</label>
             </div>
-            <form class="d-flex justify-content-end" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-dark " type="submit"><span class="color-text material-symbols-outlined">
-                        search
-                    </span></button>
-            </form>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                    value="option2">
+                <label class="form-check-label" for="inlineRadio2">Category</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
+                    value="option3">
+                <label class="form-check-label" for="inlineRadio3">Category </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4"
+                    value="option4">
+                <label class="form-check-label" for="inlineRadio4">Category</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5"
+                    value="option5">
+                <label class="form-check-label" for="inlineRadio5">Category </label>
+            </div>
         </div>
-        <div class="d-flex flex-wrap gap-3 justify-content-evenly m-5">
-          <div class="card">
-              <img src="./Assets/img/Cinema.jpg" class="card-img-top" alt="cinema-photo">
-              <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text....</p>
-              </div>
-              <div class="card-body d-flex justify-content-evenly">
-                  <p class="d-inline-block card-text">Price: $1111</p>
-                  <a href="./details.html" class="btn btn-dark color-text card-link">Another link</a>
-              </div>
-          </div>
+        <form class="d-flex justify-content-end" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-dark " type="submit"><span class="color-text material-symbols-outlined">
+                    search
+                </span></button>
+        </form>
+    </div>
+    <div class="cards d-flex flex-wrap gap-3 justify-content-evenly m-5">
+        <div class="card">
+            <img src="./Assets/img/Cinema.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text....</p>
+            </div>
+            <div class="card-body d-flex justify-content-evenly">
+                <p class="d-inline-block card-text">Price: $1111</p>
+                <a href="./details.html" class="btn btn-dark color-text card-link">Another link</a>
+            </div>
+        </div>
 
-          <div class="card">
-              <img src="./Assets/img/Costume-Party.jpg" class="card-img-top" alt="custome-party-photo">
-              <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text....</p>
-              </div>
-              <div class="card-body d-flex justify-content-evenly">
-                  <p class="d-inline-block card-text">Price: $1111</p>
-                  <a href="./details.html" class="btn btn-dark color-text card-link">Another link</a>
-              </div>
-          </div>
+        <div class="card">
+            <img src="./Assets/img/Cinema.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text....</p>
+            </div>
+            <div class="card-body d-flex justify-content-evenly">
+                <p class="d-inline-block card-text">Price: $1111</p>
+                <a href="./details.html" class="btn btn-dark color-text card-link">Another link</a>
+            </div>
+        </div>
 
-          <div class="card">
-              <img src="./Assets/img/Food-Fair.jpg" class="card-img-top" alt="Food-Fair-photo">
-              <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text....</p>
-              </div>
-              <div class="card-body d-flex justify-content-evenly">
-                  <p class="d-inline-block card-text">Price: $1111</p>
-                  <a href="./details.html" class="btn btn-dark color-text card-link">Another link</a>
-              </div>
-          </div>
+        <div class="card">
+            <img src="./Assets/img/Cinema.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text....</p>
+            </div>
+            <div class="card-body d-flex justify-content-evenly">
+                <p class="d-inline-block card-text">Price: $1111</p>
+                <a href="./details.html" class="btn btn-dark color-text card-link">Another link</a>
+            </div>
+        </div>
 
-          <div class="card" >
-              <img src="./Assets/img/Marathon.jpg" class="card-img-top" alt="Marathon-Photo">
-              <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text....</p>
-              </div>
-              <div class="card-body d-flex justify-content-evenly">
-                  <p class="d-inline-block card-text">Price: $1111</p>
-                  <a href="./details.html" class="btn btn-dark color-text card-link">Another link</a>
-              </div>
-          </div>
+        <div class="card">
+            <img src="./Assets/img/Cinema.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text....</p>
+            </div>
+            <div class="card-body d-flex justify-content-evenly">
+                <p class="d-inline-block card-text">Price: $1111</p>
+                <a href="./details.html" class="btn btn-dark color-text card-link">Another link</a>
+            </div>
+        </div>
 
-          <div class="card">
-              <img src="./Assets/img/Museum-Tour.jpg" class="card-img-top" alt="Museum-Tour-Photo">
-              <div class="card-body text-center">
-                  <h5 class="card-title ">Card title</h5>
-                  <p class="card-text">Some quick example text....</p>
-              </div>
-              <div class="card-body d-flex justify-content-evenly">
-                  <p class="d-inline-block card-text">Price: $1111</p>
-                  <a href="./details.html" class="btn btn-dark color-text card-link">Another link</a>
-              </div>
-          </div>
-          <div class="card" >
-              <img src="./Assets/img/Music-Concert.jpg" class="card-img-top" alt="Music-Concert-Photo">
-              <div class="card-body text-center">
-                  <h5 class="card-title ">Card title</h5>
-                  <p class="card-text">Some quick example text....</p>
-              </div>
-              <div class="card-body d-flex justify-content-evenly">
-                  <p class="d-inline-block card-text">Price: $1111</p>
-                  <a href="./details.html" class="btn btn-dark color-text card-link">Another link</a>
-              </div>
-          </div>
-      </div>
-    </main>
+        <div class="card">
+            <img src="./Assets/img/Cinema.jpg" class="card-img-top" alt="...">
+            <div class="card-body text-center">
+                <h5 class="card-title ">Card title</h5>
+                <p class="card-text">Some quick example text....</p>
+            </div>
+            <div class="card-body d-flex justify-content-evenly">
+                <p class="d-inline-block card-text">Price: $1111</p>
+                <a href="./details.html" class="btn btn-dark color-text card-link">Another link</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="./Assets/img/Cinema.jpg" class="card-img-top" alt="...">
+            <div class="card-body text-center">
+                <h5 class="card-title ">Card title</h5>
+                <p class="card-text">Some quick example text....</p>
+            </div>
+            <div class="card-body d-flex justify-content-evenly">
+                <p class="d-inline-block card-text">Price: $1111</p>
+                <a href="./details.html" class="btn btn-dark color-text card-link">Another link</a>
+            </div>
+        </div>
+    </div>
+</main>
 
   <footer>
 

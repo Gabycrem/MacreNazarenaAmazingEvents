@@ -23,6 +23,19 @@ footer{
     min-height: 10vh;
 }
 
+.footer{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 1em;
+}
+
+footer svg{
+    width: 50px;
+    
+}
+
 .navbar .navbar-toggler-icon{
     background-image: url(../img/burguer.png);
     width: 2.5em;
@@ -43,7 +56,6 @@ footer{
 .card{
     border-radius: 10%!important;
     width: 18rem;
-    
 }
 
 .card-img-top{
@@ -81,14 +93,11 @@ footer{
 .contact-main form{
     width: 450px;
 }
-/* .form-control-lg{
-    align-items: center;
-} */
+
 .main-check{
     padding-left: 5%;
     padding-right: 5%;
 }
-
 
 @media only screen and (min-width: 1440px){
     .cards{
@@ -99,7 +108,6 @@ footer{
         width: 60%;
         margin:auto;
     }
-    
 }
 
 @media only screen and (min-width: 1637px){
@@ -112,15 +120,15 @@ footer{
     .cards{
         width: 60%;
     }
-
-    
 }
 
-
+@media only screen and (min-width: 418px){
+    .footer{
+        justify-content: space-between;
+    }
+}
 
 @media only screen and (max-width: 798px){
-
-    
     .cards{
         margin: 0;
     }
@@ -128,4 +136,18 @@ footer{
 
 @media only screen and (max-width: 649px){
 
+}
+
+
+
+@media only screen and (max-width: 354px){
+
+    .navbar .navbar-toggler-icon {
+        width: 2em;
+        height: 2em;
+    }
+
+    header nav button{
+        margin: auto!important;
+    }
 }

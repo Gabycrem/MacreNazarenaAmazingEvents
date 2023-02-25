@@ -192,6 +192,12 @@ footer svg {
     }
 }
 
+@media only screen and (max-width: 470px) {
+    .contact-main form{
+        width: 95%;
+    }
+}
+
 @media only screen and (max-width: 354px) {
 
     .navbar .navbar-toggler-icon {

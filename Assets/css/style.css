@@ -1,29 +1,29 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     height: 100vh;
 }
 
-header{
+header {
     min-height: 20vh;
 }
 
-main{
+main {
     display: flex;
     flex-direction: column;
     align-items: center;
     min-height: 70vh;
 }
 
-footer{
+footer {
     min-height: 10vh;
 }
 
-.footer{
+.footer {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -31,123 +31,175 @@ footer{
     row-gap: 1em;
 }
 
-footer svg{
+footer svg {
     width: 50px;
-    
+
 }
 
-.navbar .navbar-toggler-icon{
+.navbar .navbar-toggler-icon {
     background-image: url(../img/burguer.png);
     width: 2.5em;
     height: 2.5em;
 }
-.color-text{
-    color: #d90368!important;
+
+.color-text {
+    color: #d90368 !important;
 }
 
 .material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 48
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 48
 }
 
-.card{
-    border-radius: 10%!important;
+.card {
+    border-radius: 10% !important;
     width: 18rem;
+    height: 425px;
 }
 
-.card-img-top{
-    border-top-right-radius:1.5em!important;
-    border-top-left-radius: 1.5em!important;
-    height: 50%;
+.card-img-top {
+    border-top-right-radius: 1.5em !important;
+    border-top-left-radius: 1.5em !important;
+    height: 45%;
 }
 
-.my-card{
+#card-center {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5em;
+    height: 40%;
+}
+
+#card-footer {
+    height: 15%;
+    margin-bottom: 1em;
+    align-items: center;
+    text-align: center;
+}
+
+#card-footer .btn {
+    height: 2.5em;
+}
+
+.my-card {
     height: max-content;
     border-radius: 1.5em;
     border: 2px solid #d90368;
-    box-shadow: 5px 5px  #ed60a2;
+    box-shadow: 5px 5px #ed60a2;
 }
-.img-details{
-    border-top-left-radius:1.5em!important;
+
+.img-details {
+    border-top-left-radius: 1.5em !important;
     border-bottom-left-radius: 1.5em;
     max-width: 100%;
     height: 100%;
 }
 
-.my-card p{
-    margin-bottom: 1.5em;
-}
-
-.stats-main{
+.stats-main {
     width: 80%;
-    margin:auto;
+    margin: auto;
 }
 
-.stats-main td{
+.stats-main td {
     height: 2rem;
 }
 
-.contact-main form{
+.contact-main form {
     width: 450px;
 }
 
-.main-check{
+.main-check {
     padding-left: 5%;
     padding-right: 5%;
+    margin-top: 1.5em;
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 0.7em;
+    justify-content: center;
+    align-items: center;
 }
 
-@media only screen and (min-width: 1440px){
-    .cards{
-        width: 80%;
-        margin: auto;
-    }
-    .stats-main{
-        width: 60%;
-        margin:auto;
-    }
+.check{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.check-inline{
+    display: inline-block;
+    margin-right: 1.5em;
+    margin: 0.25em 1.5em 0.25em 0;
 }
 
-@media only screen and (min-width: 1637px){
-    .cards{
-        width: 70%;
-    }
-}
-
-@media only screen and (min-width: 1868px){
-    .cards{
-        width: 60%;
-    }
-}
-
-@media only screen and (min-width: 418px){
-    .footer{
+@media only screen and (min-width: 1139px) {
+    .main-check{
+        width: 100%;
         justify-content: space-between;
     }
 }
 
-@media only screen and (max-width: 798px){
-    .cards{
+@media only screen and (min-width: 1312px) {
+    .cards {
+        width: 80%;
+        margin: auto;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .stats-main {
+        width: 60%;
+        margin: auto;
+    }
+    .main-check {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+}
+
+@media only screen and (min-width: 1517px) {
+    .cards {
+        width: 70%;
+    }
+}
+
+@media only screen and (min-width: 1732px) {
+    .cards {
+        width: 65%;
+    }
+    .main-check {
+        padding-left: 15%;
+        padding-right: 15%;
+    }
+}
+
+@media only screen and (min-width: 1868px) {
+    .cards {
+        width: 60%;
+    }
+}
+
+@media only screen and (min-width: 418px) {
+    .footer {
+        justify-content: space-between;
+    }
+}
+
+@media only screen and (max-width: 798px) {
+    .cards {
         margin: 0;
     }
 }
 
-@media only screen and (max-width: 649px){
-
-}
-
-
-
-@media only screen and (max-width: 354px){
+@media only screen and (max-width: 354px) {
 
     .navbar .navbar-toggler-icon {
         width: 2em;
         height: 2em;
     }
 
-    header nav button{
-        margin: auto!important;
+    header nav button {
+        margin: auto !important;
     }
 }

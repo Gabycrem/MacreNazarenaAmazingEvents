@@ -33,14 +33,14 @@ checkboxes.forEach(checkbox => {
     })
 });
 
-let inputSearch = document.getElementById('inputSearch');
+let inputSearch = document.getElementById('inputSearchPast');
 inputSearch.addEventListener('keyup', () => {
     cargarCardPast(filtrarTodo(data.events), 'cards');
 })
 
 function filtrarPorBuscado(value, miObjeto) {
     if (value == '') return miObjeto;
-    return miObjeto.filter(elemento => elemento.name.toLowerCase().includes(value.toLowerCase().trim));
+    return miObjeto.filter(elemento => elemento.name.toLowerCase().includes(value.toLowerCase().trim()));
 }
 
 function filtrarPorCheck(arrayStr, arrayObj) {

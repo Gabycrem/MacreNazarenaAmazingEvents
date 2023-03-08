@@ -30,6 +30,7 @@ checkbox.appendChild(fragmentCheck);
 
 //-------------------------------
 let chequeados = [];
+let searchFilter = [];
 
 function filtrarPorBuscado (value, miObjeto){ 
     if(value == '') return miObjeto;
@@ -61,7 +62,7 @@ inputSearch.addEventListener('keyup', () => {
 
 function filtrarTodo(array){
     let checkFilter = filtrarPorCheck(chequeados, array);
-    let searchFilter = filtrarPorBuscado(inputSearch.value, checkFilter);
+    searchFilter = filtrarPorBuscado(inputSearch.value, checkFilter);
     console.log(searchFilter);
     return searchFilter;
 }
@@ -69,9 +70,17 @@ function filtrarTodo(array){
 // CARGA DE TARJETAS DINÁMICAS
 cargarCard(data.events, 'cards');
 
+
+
 function cargarCard(miObjeto, unId) {
     let cards = document.getElementById(unId);
     cards.innerHTML = '';
+    if (searchFilter.length == 0 && inputSearch.value != '') {
+        let card = document.createElement('div');
+        card.classList.add('card');
+        card.innerHTML = `<h5 class="card-title"> Su búsqueda no obtuvo resultados</h5>`;
+        cards.appendChild(card);
+    }
     let fragmentCards = document.createDocumentFragment();
     for (let events of miObjeto) {
         let card = document.createElement('div');

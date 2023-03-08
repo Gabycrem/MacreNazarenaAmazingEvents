@@ -21,7 +21,7 @@ for (let events of data.events) {
         </div>
         <div class="d-flex justify-content-evenly" id="card-footer">
             <p class="d-inline-block card-text">Price: $${events.price}</p>
-            <a href="./details.html" class="btn btn-dark color-text card-link">Details</a>
+            <a href="./details.html?id=${events._id}" class="btn btn-dark color-text card-link">Details</a>
         </div>`;
         fragment.appendChild(card);
     }
@@ -30,3 +30,28 @@ for (let events of data.events) {
 }
 
 cards.appendChild(fragment);
+
+// CARGA DINAMICA CHECKBOX
+
+let checkbox = document.getElementById('check');
+let categoriesNotDup = [];
+let categories = data.events.map(event => {
+    if (!categoriesNotDup.includes(event.category)){
+        categoriesNotDup.push(event.category);
+    }
+});
+
+console.log(categoriesNotDup);
+
+let fragmentCheck = document.createDocumentFragment();
+let cont = 0;
+for (let category of categoriesNotDup) {
+    let check = document.createElement('div');
+    cont++;
+    check.classList.add('check-inline');
+    check.innerHTML = `<input class="form-check-input" type="checkbox" name="inlineRadioOptions" id="inlineRadio${cont}"
+             value="${category}">
+             <label class="form-check-label" for="inlineRadio${cont}">${category}</label>`;
+    fragmentCheck.appendChild(check);
+}
+checkbox.appendChild(fragmentCheck);

@@ -3,7 +3,6 @@
 let checkbox = document.getElementById('check');
 let fragmentCheck = document.createDocumentFragment();
 let categories = [];
-
 const catNotDups = (unArray) => {
     for (let events of data.events) {
         categories.push(events.category)
@@ -29,40 +28,52 @@ for (let category of categories) {
 }
 checkbox.appendChild(fragmentCheck);
 
-
 //-------------------------------
-// TRAER TODOS LOS CHECKBOX
+let chequeados = [];
 
-let checkboxes = document.querySelectorAll('input[type=checkbox]');
-
-console.log(checkboxes);
-checkboxes.forEach(checkbox => {
-    checkbox.addEventListener('change', seleccionados);
-})
-// FILTRAR LOS SELECCIONADOS
-function seleccionados() {
-    let chequeados = Array.from(checkboxes).filter(checkbox => checkbox.checked);
-    console.log(chequeados);
-    let inputsValue = chequeados.map(input => input.value);
-    console.log(inputsValue);
-    let eventFiltr = data.events.filter(event => inputsValue.includes(event.category));
-    console.log(eventFiltr)
-    
+function filtrarPorBuscado (value, miObjeto){ 
+    if(value == '') return miObjeto;
+    return miObjeto.filter(elemento => elemento.name.toLowerCase().includes(value.toLowerCase().trim()));
 }
 
+function filtrarPorCheck (arrayStr, arrayObj){
+    if (arrayStr.length == 0) return arrayObj
+    let eventFiltr = arrayObj.filter(event => arrayStr.includes(event.category));
+    return(eventFiltr)
+}
 
-// IMPRIMIR FILTRADOS
+// FILTRAR LOS SELECCIONADOS
 
+// evento CHECKBOX
+let checkboxes = document.querySelectorAll('input[type=checkbox]');
+checkboxes.forEach(checkbox => {
+    checkbox.addEventListener('change', () =>{
+        chequeados = Array.from(checkboxes).filter(checkbox => checkbox.checked).map(input => input.value);
+        cargarCard(filtrarTodo(data.events),'cards');
+    });
+    
+})
+//  evento SEARCH
+let inputSearch = document.getElementById('inputSearch');
+inputSearch.addEventListener('keyup', () => {
+    cargarCard(filtrarTodo(data.events), 'cards');
+})
+
+function filtrarTodo(array){
+    let checkFilter = filtrarPorCheck(chequeados, array);
+    let searchFilter = filtrarPorBuscado(inputSearch.value, checkFilter);
+    console.log(searchFilter);
+    return searchFilter;
+}
 
 // CARGA DE TARJETAS DINÁMICAS
-cargarCard();
+cargarCard(data.events, 'cards');
 
-function cargarCard() {
-    let cards = document.getElementById('cards');
+function cargarCard(miObjeto, unId) {
+    let cards = document.getElementById(unId);
+    cards.innerHTML = '';
     let fragmentCards = document.createDocumentFragment();
-
-    for (let events of data.events) {
-
+    for (let events of miObjeto) {
         let card = document.createElement('div');
         card.classList.add('card');
         card.innerHTML = `
@@ -77,7 +88,6 @@ function cargarCard() {
     </div>`;
         fragmentCards.appendChild(card);
     }
-
     cards.appendChild(fragmentCards);
 }
 

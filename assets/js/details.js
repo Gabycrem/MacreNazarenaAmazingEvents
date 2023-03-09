@@ -26,16 +26,12 @@ function cargarCard(){
       <p class="card-text">${claves[8].charAt(0).toUpperCase().concat(claves[8].slice(1))}: ${evento.assistance? evento.assistance : evento.estimate}</p>
       <p class="card-text">${claves[9].charAt(0).toUpperCase().concat(claves[9].slice(1))}: $${evento.price}.-</p>
       
-      <button class="btn btn-dark color-text card-link onclick="back();">Volver atrás</button>
     </div>
   </div>`
 
 }
-function back(){
-    window.history.back();
-}
-cargarCard();
 
+cargarCard();
 
 
 

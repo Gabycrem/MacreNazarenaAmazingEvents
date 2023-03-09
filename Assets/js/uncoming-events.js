@@ -24,6 +24,7 @@ for (let category of categoriesNotDup) {
 checkbox.appendChild(fragmentCheck);
 
 let chequeados = [];
+let searchFilter = [];
 
 let checkboxes = document.querySelectorAll('input[type=checkbox]');
 checkboxes.forEach(checkbox => {
@@ -50,7 +51,7 @@ function filtrarPorCheck(arrayStr, arrayObj) {
 
 function filtrarTodo(array) {
     let checkFilter = filtrarPorCheck(chequeados, array);
-    let searchFilter = filtrarPorBuscado(inputSearch.value, checkFilter);
+    searchFilter = filtrarPorBuscado(inputSearch.value, checkFilter);
     console.log(searchFilter);
     return searchFilter;
 }
@@ -66,12 +67,22 @@ function cargarCardPast(miObjeto, unId) {
     let cards = document.getElementById(unId);
     let fragment = document.createDocumentFragment();
     cards.innerHTML = '';
+    
     for (let events of miObjeto) {
 
         let eventeDateString = events.date;
         let eventDate = new Date(eventeDateString);
 
         if (eventDate > currentDate) {
+            if (searchFilter.length == 0 && inputSearch.value != '') {
+                let card = document.createElement('div');
+                card.classList.add('card' ,'my-card', 'mb-3','d-flex', 'flex-row', 'w-50', 'p-1', 'gap-2');
+                card.innerHTML = `<div id="card-center">
+                <h5 class="card-title">NO EXISTE</h5>
+                <p class="card-text">Su búsqueda no coincide con ningún evento</p>
+            </div>`;
+                cards.appendChild(card);
+            }
             let card = document.createElement('div');
             card.classList.add('card');
             card.innerHTML = `

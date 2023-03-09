@@ -25,7 +25,8 @@ function cargarCard(){
       <p class="card-text">${claves[7].charAt(0).toUpperCase().concat(claves[7].slice(1))}: ${evento.capacity}</p>
       <p class="card-text">${claves[8].charAt(0).toUpperCase().concat(claves[8].slice(1))}: ${evento.assistance? evento.assistance : evento.estimate}</p>
       <p class="card-text">${claves[9].charAt(0).toUpperCase().concat(claves[9].slice(1))}: $${evento.price}.-</p>
-      <button onclick="back();">Volver atrás</button>
+      
+      <button class="btn btn-dark color-text card-link onclick="back();">Volver atrás</button>
     </div>
   </div>`
 

@@ -77,8 +77,11 @@ function cargarCard(miObjeto, unId) {
     cards.innerHTML = '';
     if (searchFilter.length == 0 && inputSearch.value != '') {
         let card = document.createElement('div');
-        card.classList.add('card');
-        card.innerHTML = `<h5 class="card-title"> Su búsqueda no obtuvo resultados</h5>`;
+        card.classList.add('card' ,'my-card', 'mb-3','d-flex', 'flex-row', 'w-50', 'p-1', 'gap-2');
+        card.innerHTML = `<div id="card-center">
+        <h5 class="card-title">NO EXISTE</h5>
+        <p class="card-text">Su búsqueda no coincide con ningún evento</p>
+    </div>`;
         cards.appendChild(card);
     }
     let fragmentCards = document.createDocumentFragment();

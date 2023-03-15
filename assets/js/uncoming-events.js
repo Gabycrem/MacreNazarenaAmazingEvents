@@ -87,7 +87,7 @@ function noEncuentra(cards){
         console.log('entre al if de no exos')
         card.classList.add('card', 'my-card', 'mb-3', 'd-flex', 'flex-row', 'w-50', 'p-1', 'gap-2');
         card.innerHTML = `<div id="card-center">
-        <h5 class="card-title">NO EXISTE</h5>
+        <h5 class="card-title">"${inputSearch.value}" NO EXISTE</h5>
         <p class="card-text">Su búsqueda no coincide con ningún evento</p>
     </div>`;
         cards.appendChild(card);

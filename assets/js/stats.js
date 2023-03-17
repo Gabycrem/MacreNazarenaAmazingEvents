@@ -48,6 +48,7 @@ function pastEvents(miObjeto, miJson) {
         }
     }
     categoriesFilt(eventsPast);
+    console.log(eventsUncoming)
     categoriesFilt(eventsUncoming);
 }
 
@@ -66,9 +67,10 @@ function categoriesFilt(miObjeto) {
         tablaPast = categories;
         //console.log('eventPast')
         //console.log(tablaPast)
-    } else {
+    } else if(miObjeto[0].keys('estimate')) {
         tablaUncoming = categories;
-        //console.log(tablaUncoming)
+        console.log('eventos futuros')
+        console.log(tablaUncoming)
     }
     //console.log(tablaPast)
 }
@@ -84,17 +86,19 @@ function ganancias(unArray, categoria) {
             revenues += (evento.assistance ? evento.assistance : evento.estimate) * evento.price;
             sumaAss += parseFloat(((evento.assistance ? evento.assistance : evento.estimate) * 100 / evento.capacity).toFixed(2));
         }
-        if (evento.assistance && !tablaPast.includes(categoria)) {
-            tablaPast.push(categoria);
-        } else if (evento.estimate && !tablaUncoming.includes(categoria)) {
-            tablaUncoming.push(categoria);
-        }
+        // if (evento.assistance && !tablaPast.includes(categoria)) {
+        //     tablaPast.push(categoria);
+        // } else if (!tablaUncoming.includes(categoria)) {
+        //     tablaUncoming.push(categoria);
+        // }
     }
     sumaAss = parseFloat(sumaAss / contCat).toFixed(2);
     if (unArray.keys('assistance')){
-
+        cargarTabla2y3(tabla3, categoria, revenues, sumaAss)
+    } else if(unArray.keys('estimate')){
+        cargarTabla2y3(tabla2, categoria, revenues, sumaAss);
     }
-    console.log(categoria + ' ' + sumaAss + '% -- Revenues: $' + revenues)
+    //console.log(categoria + ' ' + sumaAss + '% -- Revenues: $' + revenues)
 
 
 }
@@ -102,12 +106,14 @@ function ganancias(unArray, categoria) {
 
 
 function cargarTabla2y3(tabla, col1, col2, col3) {
-    tabla.innerHTML = `
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>`
+    let fila =document.createElement('tr');
+    fila.innerHTML = `
+        
+          <td>${col1}</td>
+          <td>$ ${col2}.- </td>
+          <td>${col3} %</td>
+        `;
+    tabla.appendChild(fila);
 }
 
 function cargarTabla1(miObjeto) {

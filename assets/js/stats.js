@@ -42,7 +42,7 @@ function pastEvents(miObjeto, miJson) {
 
         if (eventDate < currentDate(miJson)) {
             eventsPast.push(evento);
-
+            //console.log(eventsPast)
         } else {
             eventsUncoming.push(evento);
         }
@@ -62,14 +62,15 @@ function categoriesFilt(miObjeto) {
 
     })
     console.log(miObjeto)
-    if (miObjeto == 'eventsPast'){
+    if (miObjeto.keys('assistance')){
         tablaPast = categories;
+        //console.log('eventPast')
         //console.log(tablaPast)
     } else {
         tablaUncoming = categories;
-        console.log(tablaUncoming)
+        //console.log(tablaUncoming)
     }
-
+    //console.log(tablaPast)
 }
 
 function ganancias(unArray, categoria) {
@@ -90,6 +91,9 @@ function ganancias(unArray, categoria) {
         }
     }
     sumaAss = parseFloat(sumaAss / contCat).toFixed(2);
+    if (unArray.keys('assistance')){
+
+    }
     console.log(categoria + ' ' + sumaAss + '% -- Revenues: $' + revenues)
 
 
@@ -99,16 +103,6 @@ function ganancias(unArray, categoria) {
 
 function cargarTabla2y3(tabla, col1, col2, col3) {
     tabla.innerHTML = `
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
         <tr>
           <td></td>
           <td></td>

@@ -17,9 +17,9 @@ async function traerDatos() {
         pastEvents(datos.events, datos);
         //console.log(eventsPast);
         porcentajeAsistencia(eventsPast);
-        tablaPast.forEach(cat => { ganancias(eventsPast, cat)});
-        tablaUncoming.forEach(cat => { ganancias(eventsUncoming, cat)});
-        
+        tablaPast.forEach(cat => { ganancias(eventsPast, cat, 'past')});
+        tablaUncoming.forEach(cat => { ganancias(eventsUncoming, cat, 'uncoming')});
+        console.log(tablaUncoming)
         //categoriesFilt(datos.events);
 
     }
@@ -47,27 +47,25 @@ function pastEvents(miObjeto, miJson) {
             eventsUncoming.push(evento);
         }
     }
-    categoriesFilt(eventsPast);
-    console.log(eventsUncoming)
-    categoriesFilt(eventsUncoming);
+    categoriesFilt(eventsPast,'past');
+    
+    categoriesFilt(eventsUncoming, 'uncoming');
 }
 
 
-function categoriesFilt(miObjeto) {
+function categoriesFilt(miObjeto, tiempo) {
     let categories = [];
     miObjeto.map(event => {
         if (!categories.includes(event.category)) {
-            categories.push(event.category);
-             
+            categories.push(event.category);    
         }
-
     })
     console.log(miObjeto)
-    if (miObjeto.keys('assistance')){
+    if (tiempo == 'past'){
         tablaPast = categories;
         //console.log('eventPast')
         //console.log(tablaPast)
-    } else if(miObjeto[0].keys('estimate')) {
+    } else {
         tablaUncoming = categories;
         console.log('eventos futuros')
         console.log(tablaUncoming)
@@ -75,8 +73,7 @@ function categoriesFilt(miObjeto) {
     //console.log(tablaPast)
 }
 
-function ganancias(unArray, categoria) {
-    //console.log(categorias)
+function ganancias(unArray, categoria, tiempo) {
     let revenues = 0;
     let sumaAss = 0;
     let contCat = 0;
@@ -93,9 +90,9 @@ function ganancias(unArray, categoria) {
         // }
     }
     sumaAss = parseFloat(sumaAss / contCat).toFixed(2);
-    if (unArray.keys('assistance')){
+    if (tiempo == 'past'){
         cargarTabla2y3(tabla3, categoria, revenues, sumaAss)
-    } else if(unArray.keys('estimate')){
+    } else{
         cargarTabla2y3(tabla2, categoria, revenues, sumaAss);
     }
     //console.log(categoria + ' ' + sumaAss + '% -- Revenues: $' + revenues)

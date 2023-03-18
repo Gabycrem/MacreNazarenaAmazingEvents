@@ -1,3 +1,6 @@
+/** color del header: #f8d7da */
+
+
 * {
     margin: 0;
     padding: 0;
@@ -133,6 +136,11 @@ footer svg {
     margin: 0.25em 1.5em 0.25em 0;
 }
 
+#details-card{
+    max-width: 600px ;
+    min-width: 600px;
+}
+
 @media only screen and (min-width: 1139px) {
     .main-check{
         width: 100%;
@@ -190,7 +198,18 @@ footer svg {
     .cards {
         margin: 0;
     }
+    
+    
+
 }
+
+@media only screen and (max-width: 620px){
+    #details-card{
+        min-width: 0;
+        width: 100% ;
+    }
+}
+
 
 @media only screen and (max-width: 470px) {
     .contact-main form{

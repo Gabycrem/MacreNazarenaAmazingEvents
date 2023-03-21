@@ -12,39 +12,32 @@ async function traerDatos() {
         const datos = await response.json();
         let eventos = datos.events;
         cargarChecks(eventos);
-        
         cargarCard(eventos, 'cards');
         let checkboxes = document.querySelectorAll('input[type=checkbox]');
         checkboxes.forEach(checkbox => {
             checkbox.addEventListener('change', () => {
                 chequeados = Array.from(checkboxes).filter(checkbox => checkbox.checked)
                     .map(input => input.value);
-                console.log(`Acá están los ${chequeados}`);
                 cargarCard(filtrarTodo(eventos), 'cards');
             })
         });
-
         inputSearch.addEventListener('keyup', () => {
             cargarCard(filtrarTodo(eventos), 'cards');
         })
     }
     catch (error) {
-        console.log(error);
+        console.error(error);
     }
 }
 
 // CARGA DINAMICA CHECKBOX 
 function cargarChecks(unArray) {
-
     let categoriesNotDup = [];
     let categories = unArray.map(event => {
         if (!categoriesNotDup.includes(event.category)) {
             categoriesNotDup.push(event.category);
         }
     });
-
-    console.log(categoriesNotDup);
-
     let fragmentCheck = document.createDocumentFragment();
     for (let category of categoriesNotDup) {
         let check = document.createElement('div');
@@ -57,9 +50,7 @@ function cargarChecks(unArray) {
     checkbox.appendChild(fragmentCheck);
 }
 
-
 // FILTRANDOOOOOO
-
 function filtrarPorBuscado(value, miObjeto) {
     if (value == '') return miObjeto;
     return miObjeto.filter(elemento => elemento.name.toLowerCase().includes(value.toLowerCase().trim()));
@@ -78,44 +69,16 @@ function filtrarTodo(array) {
 }
 
 function noEncuentra(cards){
-
     if (searchFilter.length == 0 && inputSearch.value != '') {
         let card = document.createElement('div');
-        console.log('entre al if de no exos')
-        card.classList.add('card', 'my-card', 'mb-3', 'd-flex', 'flex-row', 'w-50', 'p-1', 'gap-2');
+        card.classList.add('card','card-border', 'my-card', 'mb-3', 'd-flex', 'flex-row', 'w-50', 'p-1', 'gap-2');
         card.innerHTML = `<div id="card-center">
-        <h5 class="card-title">"${inputSearch.value}" NO EXISTE</h5>
-        <p class="card-text">Su búsqueda no coincide con ningún evento</p>
+        <h5 class="card-title">"${inputSearch.value}" DOES NOT EXIST</h5>
+        <p class="card-text">Your search does not match any events</p>
     </div>`;
         cards.appendChild(card);
     }
 }
-
-
-//-------------------------------
-
-
-
-
-// FILTRAR LOS SELECCIONADOS
-
-// // evento CHECKBOX
-// let checkboxes = document.querySelectorAll('input[type=checkbox]');
-// checkboxes.forEach(checkbox => {
-//     checkbox.addEventListener('change', () =>{
-//         chequeados = Array.from(checkboxes).filter(checkbox => checkbox.checked).map(input => input.value);
-//         cargarCard(filtrarTodo(data.events),'cards');
-//     });
-    
-// })
-// //  evento SEARCH
-// inputSearch.addEventListener('keyup', () => {
-//     cargarCard(filtrarTodo(data.events), 'cards');
-// })
-
-// CARGA DE TARJETAS DINÁMICAS
-
-
 
 function cargarCard(miObjeto, unId) {
     let cards = document.getElementById(unId);
@@ -124,7 +87,7 @@ function cargarCard(miObjeto, unId) {
     noEncuentra(cards);
     for (let events of miObjeto) {
             let card = document.createElement('div');
-            card.classList.add('card');
+            card.classList.add('card','card-border');
             card.innerHTML = `
         <img src="${events.image}" class="card-img-top" alt="...">
         <div id="card-center">
@@ -139,6 +102,3 @@ function cargarCard(miObjeto, unId) {
     }
     cards.appendChild(fragment);
 }
-
-//-------------------------------
-

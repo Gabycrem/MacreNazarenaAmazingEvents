@@ -8,20 +8,15 @@ let tabla3 = document.getElementById('tabla3');
 let tablaPast = [];
 let tablaUncoming = [];
 
-
 traerDatos()
 async function traerDatos() {
     try {
         const response = await fetch(urlApi)
         const datos = await response.json();
         pastEvents(datos.events, datos);
-        //console.log(eventsPast);
         porcentajeAsistencia(eventsPast);
-        tablaPast.forEach(cat => { ganancias(eventsPast, cat, 'past')});
-        tablaUncoming.forEach(cat => { ganancias(eventsUncoming, cat, 'uncoming')});
-        console.log(tablaUncoming)
-        //categoriesFilt(datos.events);
-
+        tablaPast.forEach(cat => { ganancias(eventsPast, cat, 'past') });
+        tablaUncoming.forEach(cat => { ganancias(eventsUncoming, cat, 'uncoming') });
     }
     catch (error) {
         console.error('ERRORRRRRRR' + error);
@@ -35,42 +30,31 @@ function currentDate(miObjeto) {
 }
 
 function pastEvents(miObjeto, miJson) {
-
     for (evento of miObjeto) {
         let eventeDateString = evento.date;
         let eventDate = new Date(eventeDateString);
-
         if (eventDate < currentDate(miJson)) {
             eventsPast.push(evento);
-            //console.log(eventsPast)
         } else {
             eventsUncoming.push(evento);
         }
     }
-    categoriesFilt(eventsPast,'past');
-    
+    categoriesFilt(eventsPast, 'past');
     categoriesFilt(eventsUncoming, 'uncoming');
 }
-
 
 function categoriesFilt(miObjeto, tiempo) {
     let categories = [];
     miObjeto.map(event => {
         if (!categories.includes(event.category)) {
-            categories.push(event.category);    
+            categories.push(event.category);
         }
     })
-    console.log(miObjeto)
-    if (tiempo == 'past'){
+    if (tiempo == 'past') {
         tablaPast = categories;
-        //console.log('eventPast')
-        //console.log(tablaPast)
     } else {
         tablaUncoming = categories;
-        console.log('eventos futuros')
-        console.log(tablaUncoming)
     }
-    //console.log(tablaPast)
 }
 
 function ganancias(unArray, categoria, tiempo) {
@@ -83,29 +67,18 @@ function ganancias(unArray, categoria, tiempo) {
             revenues += (evento.assistance ? evento.assistance : evento.estimate) * evento.price;
             sumaAss += parseFloat(((evento.assistance ? evento.assistance : evento.estimate) * 100 / evento.capacity).toFixed(2));
         }
-        // if (evento.assistance && !tablaPast.includes(categoria)) {
-        //     tablaPast.push(categoria);
-        // } else if (!tablaUncoming.includes(categoria)) {
-        //     tablaUncoming.push(categoria);
-        // }
     }
     sumaAss = parseFloat(sumaAss / contCat).toFixed(2);
-    if (tiempo == 'past'){
+    if (tiempo == 'past') {
         cargarTabla2y3(tabla3, categoria, revenues, sumaAss)
-    } else{
+    } else {
         cargarTabla2y3(tabla2, categoria, revenues, sumaAss);
     }
-    //console.log(categoria + ' ' + sumaAss + '% -- Revenues: $' + revenues)
-
-
 }
 
-
-
 function cargarTabla2y3(tabla, col1, col2, col3) {
-    let fila =document.createElement('tr');
+    let fila = document.createElement('tr');
     fila.innerHTML = `
-        
           <td>${col1}</td>
           <td>$ ${col2}.- </td>
           <td>${col3} %</td>
@@ -121,6 +94,7 @@ function cargarTabla1(miObjeto) {
         <td> ${miObjeto.eventMayCapacity} </td>
     </tr>`
 }
+
 function porcentajeAsistencia(unArray) {
     let contTabla1 = {};
     let eventMayPorAsist = '';

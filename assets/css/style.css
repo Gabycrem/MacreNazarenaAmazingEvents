@@ -1,6 +1,4 @@
 /** color del header: #f8d7da */
-
-
 * {
     margin: 0;
     padding: 0;
@@ -36,7 +34,6 @@ footer {
 
 footer svg {
     width: 50px;
-
 }
 
 .navbar .navbar-toggler-icon {
@@ -63,6 +60,16 @@ footer svg {
     height: 425px;
 }
 
+.card-border{
+    border: 2px solid #d90368;
+    box-shadow: 5px 5px #ed60a2;
+}
+
+.my-card-detail {
+    height: max-content;
+    border-radius: 1.5em;
+}
+
 .card-img-top {
     border-top-right-radius: 1.5em !important;
     border-top-left-radius: 1.5em !important;
@@ -85,13 +92,6 @@ footer svg {
 
 #card-footer .btn {
     height: 2.5em;
-}
-
-.my-card {
-    height: max-content;
-    border-radius: 1.5em;
-    border: 2px solid #d90368;
-    box-shadow: 5px 5px #ed60a2;
 }
 
 .img-details {
@@ -139,6 +139,10 @@ footer svg {
 #details-card{
     max-width: 600px ;
     min-width: 600px;
+}
+
+#details-card .black{
+    font-weight: bolder;
 }
 
 @media only screen and (min-width: 1139px) {
@@ -198,15 +202,28 @@ footer svg {
     .cards {
         margin: 0;
     }
-    
-    
-
 }
 
 @media only screen and (max-width: 620px){
     #details-card{
         min-width: 0;
-        width: 100% ;
+        width: 75% ;
+        flex-direction: column!important;
+        margin: 2em 0;
+    }
+    #card-txt-details, #card-img-details{
+        width: 100%!important;
+    }
+    #card-txt-details{
+        padding: 1em!important;
+    }
+    .img-details {
+        border-bottom-left-radius: 0!important;
+        border-top-right-radius: 1.5em;
+    }
+    .card-body{
+        display: flex;
+        flex-direction: column;
     }
 }
 
@@ -218,12 +235,10 @@ footer svg {
 }
 
 @media only screen and (max-width: 354px) {
-
     .navbar .navbar-toggler-icon {
         width: 2em;
         height: 2em;
     }
-
     header nav button {
         margin: auto !important;
     }

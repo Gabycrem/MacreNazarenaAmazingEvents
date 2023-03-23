@@ -70,11 +70,10 @@ function filtrarTodo(array) {
 function noEncuentra(cards){
     if (searchFilter.length == 0 && inputSearch.value != '') {
         let card = document.createElement('div');
-        console.log('entre al if de no exos')
-        card.classList.add('card', 'my-card', 'mb-3', 'd-flex', 'flex-row', 'w-50', 'p-1', 'gap-2');
+        card.classList.add('card','card-border', 'my-card', 'mb-3', 'd-flex', 'flex-row', 'w-50', 'p-1', 'gap-2');
         card.innerHTML = `<div id="card-center">
-        <h5 class="card-title">"${inputSearch.value}" NO EXISTE</h5>
-        <p class="card-text">Su búsqueda no coincide con ningún evento</p>
+        <h5 class="card-title">"${inputSearch.value}" DOES NOT EXIST</h5>
+        <p class="card-text">Your search does not match any events</p>
     </div>`;
         cards.appendChild(card);
     }
